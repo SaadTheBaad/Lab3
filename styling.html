@@ -2,36 +2,45 @@
 =========================================================
 Name        : index.html
 Assignment  : Lab 3 Exercise D
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
+Author(s)   : Saad Sheikh, Naveed Khan
+Submission  : January 31, 2024
 Description : Learning CSS.
 =========================================================
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CSS Advanced Demonstrations</title>
     <style>
         #margin-demo {
             /*Modify #margin-demo to have a margin of 30px and a solid black border of 2px. Also, the borders must fit the content.*/
+            margin: 30px;
+            border: 2px solid black;
+            /* box-sizing: border-box; */
         }
 
         .padding-demo {
             /*Adjust .padding-demo to include 30px padding and a dashed red border of 2px.*/
+            padding: 30px;
+            border: 2px dashed red;
         }
 
         .container .nested-opacity {
             /*Change the opacity of .nested-opacity to 0.2!*/
+            opacity: 0.2;
         }
 
-        
+
         .inline-demo {
             /*Change the display to see all elements of this type in a line.*/
+            display: inline;
             margin: 15px;
         }
 
         .block-demo {
             /*Ensure .block-demo centers its text.*/
+            text-align: center;
         }
 
         /*
@@ -40,30 +49,43 @@ Description : Learning CSS.
         Here, you might need to look at the technique we used for the first and second children.
         */
 
-        .block-demo > .inline-demo:first-child {            
+        .block-demo>.inline-demo:first-child {
             /*
             Add CSS that I stick the first child to the left side of the screen.
             */
             color: red;
-            
+            float: left;
+            padding-left: 10px;
+            margin: 0;
         }
 
-        .block-demo > .inline-demo:nth-child(2) {            
+        .block-demo>.inline-demo:nth-child(2) {
             color: blue;
+            margin: 0;
         }
 
-        /* Add your css for the thrid child here. */
+        /* Add your css for the third child here. */
+        .block-demo>.inline-demo:nth-child(3) {
+            color: green;
+            float: right;
+            padding-right: 10px;
+            margin: 0;
+        }
 
         .image-demo {
             /* Modify the .image-demo class to adjust the image's width to 50% of the screen. */
             border: 2px solid blue;
+            width: 50%;
         }
 
         .hover-demo:hover {
             /*Create a hover effect for .hover-demo that changes its color to blue and cursor to grabbing.*/
+            color: blue;
+            cursor: grabbing;
         }
     </style>
 </head>
+
 <body style="border: 1px solid black;">
 
     <h2>CSS Margins with ID</h2>
@@ -82,14 +104,15 @@ Description : Learning CSS.
         <div class="inline-demo"><span>I am red.</span></div>
         <div class="inline-demo"><span>I am blue.</span></div>
         <div class="inline-demo"><span>I am green.</span></div>
-    </div>    
+    </div>
 
     <h2>CSS Image Styling with Inline CSS</h2>
     <!-- Add a dotted green border of 3px inline. Which style will win the competition? -->
-    <img class="image-demo" style="" src="images/example.svg" alt="Demo Image">
+    <img class="image-demo" style="border: 3px dotted green;" src="images/example.svg" alt="Demo Image">
 
     <h2>CSS Hover Effects</h2>
     <div class="hover-demo"><span>Hover over me! My color will change to blue!</span></div>
 
 </body>
+
 </html>
